@@ -1,0 +1,438 @@
+/* a:link { */
+/*     color: #ffcccc; */
+/*     background-color: transparent; */
+/*     text-decoration: none; */
+/* body { */
+/*     /\* max-width: 50%; *\/ */
+/*     font-family: "Source Code Pro", sans-serif; */
+/*     font-size: 20px; */
+/*     background-color: #565656; */
+/*     color: #cce6ff; */
+/* } */
+
+/* blockquote { */
+/*     color: #000; */
+/*     background-color: #ff9659; */
+/* } */
+
+/* code { */
+/*     color: #000; */
+/*     background-color: #fdf2ee; */
+/* } */
+
+/* h1 { */
+/*     font-family: "Source Code Pro", sans-serif; */
+/*     color: #ccccff; */
+/* } */
+
+/* h2 { */
+/*     font-family: "Source Code Pro", sans-serif; */
+/*     color: #ccffcc; */
+/* } */
+
+.icon-bar {
+    /* position: fixed; */
+    top: 0;
+    width: 100%;
+    background-color: #444;
+    overflow: auto;
+}
+
+.icon-bar a {
+    float: left;
+    width: 25%;
+    text-align: center;
+    padding: 0ch 0;
+    transition: all 0.3s ease;
+    color: white;
+    font-size: 20px;
+    text-decoration-line: None;
+}
+
+.icon-bar a:hover {
+    color: #ccccff;
+}
+
+/* Source: copy pasted from https://gist.githubusercontent.com/andyferra/2554919/raw/10ce87fe71b23216e3075d5648b8b9e56f7758e1/github.css */
+body {
+    width: 80ch;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: "Source Code Pro", Open Sans, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #fff;
+    background-color: #444;
+    padding: 30px;
+}
+
+.remark-code, .remark-inline-code {
+    font-family: 'Source Code Pro';
+    font-size: 16px;
+}
+
+body > *:first-childd {
+    margin-top: 0 !important;
+}
+body > *:last-child {
+    margin-bottom: 0 !important;
+}
+
+p {
+    color: #fff;
+}
+
+a {
+    color: #e6ccff;
+}
+a.absent {
+    color: #cc0000;
+}
+a.anchor {
+    display: block;
+    padding-left: 30px;
+    margin-left: -30px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Source Code Pro";
+    margin: 20px 0 10px;
+    padding: 0;
+    /* font-weight: bold; */
+    -webkit-font-smoothing: antialiased;
+    cursor: text;
+    position: relative;
+    color: #cce6ff;
+}
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+    background: url("../../images/modules/styleguide/para.png") no-repeat 10px center;
+    text-decoration: none;
+}
+
+h1 tt, h1 code {
+    font-size: inherit;
+}
+
+h2 tt, h2 code {
+    font-size: inherit;
+}
+
+h3 tt, h3 code {
+    font-size: inherit;
+}
+
+h4 tt, h4 code {
+    font-size: inherit;
+}
+
+h5 tt, h5 code {
+    font-size: inherit;
+}
+
+h6 tt, h6 code {
+    font-size: inherit;
+}
+
+h1 {
+    text-transform: lowercase;
+    font-weight: bolder;
+    font-size: 37px;
+    /* color: #ebebeb */
+}
+
+h2 {
+    text-transform: lowercase;
+    font-weight: bolder;
+    font-size: 22;
+    color: #ccccff;
+    border-left: 4px solid #ffffcc;
+    padding: 0 15px;
+}
+
+h3 {
+    color: #cce6ff;
+    text-transform: lowercase;
+    font-weight: bold;
+    font-size: 20;
+}
+
+h4 {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 16;
+}
+
+h5 {
+    text-transform: uppercase;
+    font-size: 15;
+    font-weight: bolder;
+}
+
+h6 {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14;
+}
+
+p, blockquote, ul, ol, dl, li, table, pre {
+    margin: 15px 0;
+}
+
+hr {
+    background: transparent url("../../images/modules/pulls/dirty-shade.png") repeat-x 0 0;
+    border: 0 none;
+    color: #cccccc;
+    height: 4px;
+    padding: 0;
+}
+
+body > h2:first-child {
+    margin-top: 0;
+    padding-top: 0;
+}
+body > h1:first-child {
+    margin-top: 0;
+    padding-top: 0;
+}
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0;
+  }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+    margin-top: 0;
+}
+
+li p.first {
+    display: inline-block;
+}
+
+ul, ol {
+    padding-left: 30px;
+}
+
+ul :first-child, ol :first-child {
+    margin-top: 0;
+}
+
+ul :last-child, ol :last-child {
+    margin-bottom: 0;
+}
+
+dl {
+    padding: 0;
+}
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px;
+  }
+    dl dt:first-child {
+        padding: 0;
+    }
+    dl dt > :first-child {
+        margin-top: 0;
+    }
+    dl dt > :last-child {
+        margin-bottom: 0;
+    }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px;
+  }
+    dl dd > :first-child {
+        margin-top: 0;
+    }
+    dl dd > :last-child {
+        margin-bottom: 0;
+    }
+
+blockquote {
+    border-left: 4px solid #ccccff;
+    padding: 0 15px;
+    color: #525C66;
+}
+  blockquote > :first-child {
+      margin-top: 0;
+  }
+  blockquote > :last-child {
+      margin-bottomm: 0;
+  }
+
+table {
+    color: #525C66;
+    padding: 0;
+}
+  table tr {
+      border-top: 1px solid #263340;
+      background-color: #666;
+      margin: 0;
+      padding: 0;
+  }
+    table tr:nth-child(odd) {
+        background-color: #444;
+    }
+    table tr th {
+        color: #ebebeb;
+        font-size: 13px;
+        text-transform: uppercase;
+        background-color: #333;
+        font-weight: normal;
+        border: 1px solid #263340;
+        text-align: left;
+        margin: 0;
+        padding: 6px 13px;
+    }
+    table tr td {
+        color: #ebebeb;
+        border: 1px solid #263340;
+        text-align: left;
+        margin: 0;
+        padding: 6px 13px;
+    }
+    table tr th :first-child, table tr td :first-child {
+        margin-top: 0;
+    }
+    table tr th :last-child, table tr td :last-child {
+        margin-bottom: 0;
+    }
+
+img {
+    max-width: 100%;
+}
+
+span.frame {
+    display: block;
+    overflow: hidden;
+}
+  span.frame > span {
+      border: 1px solid #dddddd;
+      display: block;
+      float: left;
+      overflow: hidden;
+      margin: 13px 0 0;
+      padding: 7px;
+      width: auto;
+  }
+  span.frame span img {
+      display: block;
+      float: left;
+  }
+  span.frame span span {
+      clear: both;
+      color: #333333;
+      display: block;
+      padding: 5px 0 0;
+  }
+span.align-center {
+    display: block;
+    overflow: hidden;
+    clear: both;
+}
+  span.align-center > span {
+      display: block;
+      overflow: hidden;
+      margin: 13px auto 0;
+      text-align: center;
+  }
+  span.align-center span img {
+      margin: 0 auto;
+      text-align: center;
+  }
+span.align-right {
+    display: block;
+    overflow: hidden;
+    clear: both;
+}
+  span.align-right > span {
+      display: block;
+      overflow: hidden;
+      margin: 13px 0 0;
+      text-align: right;
+  }
+  span.align-right span img {
+      margin: 0;
+      text-align: right;
+  }
+span.float-left {
+    display: block;
+    margin-right: 13px;
+    overflow: hidden;
+    float: left;
+}
+  span.float-left span {
+      margin: 13px 0 0;
+  }
+span.float-right {
+    display: block;
+    margin-left: 13px;
+    overflow: hidden;
+    float: right;
+}
+  span.float-right > span {
+      display: block;
+      overflow: hidden;
+      margin: 13px auto 0;
+      text-align: right;
+  }
+
+code, tt {
+    margin: 1 2px;
+    padding: 0 5px;
+    white-space: nowrap;
+    border: 1px solid #111;
+    background-color: #333;
+    border-radius: 3px;
+    color: #ffffcc;
+}
+
+pre code {
+    margin: 0;
+    padding: 0;
+    white-space: pre;
+    /* border: none; */
+    /* background: transparent; */
+}
+
+.highlight pre {
+    background-color: #333;
+    border: 1px solid #cccccc;
+    font-size: 13px;
+    line-height: 19px;
+    overflow: auto;
+    padding: 6px 10px;
+    border-radius: 3px;
+}
+
+pre {
+    background-color: #333;
+    border: 1px solid #111;
+    font-size: 16;
+    line-height: 1.2;
+    overflow: auto;
+    padding: 6px 10px;
+    border-radius: 3px;
+}
+  pre code, pre tt {
+      background-color: transparent;
+      border: none;
+  }
