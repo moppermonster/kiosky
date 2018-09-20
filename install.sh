@@ -1,6 +1,6 @@
 #!/bin/bash
 
-list_of_packages='xorg openbox lightdm chromium-browser unclutter'
+list_of_packages='xorg openbox lightdm chromium-browser unclutter avahi-daemon'
 
 url=$1
 user=$2
