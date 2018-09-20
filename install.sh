@@ -1,9 +1,21 @@
 #!/bin/bash
 
-list_of_packages = 'xorg openbox lightdm chromium-browser unclutter avahi-deamon'
+list_of_packages='xorg openbox lightdm chromium-browser unclutter'
 
-url = $1
-user = $2
+url=$1
+user=$2
+
+if [ -z $url ]
+then
+    echo "Please provide a url"
+    exit
+fi
+
+if [ -z $user]
+then
+    echo "Please provide a username"
+    exit
+fi
 
 apt update
 apt install --assume-yes $list_of_packages
@@ -18,11 +30,14 @@ unclutter -idle 0 &
 chromium-browser --incognito --start-fullscreen --maximised $url &
 EOF
 
-sed -i 's./.*#autologin-user=.*/c\autologin-user='"$user" /etc/lightdm/lightdm.conf
-sed -1 '/autologin-user-timeout=0/s/^#//g' /etc/lightdm/lightdm.conf
+cat <<EOF >> /etc/lightdm/lightdm.conf
+[SeatDefaults]
+autologin-user=$user
+autologin-user-timeout=0
+EOF
 
 while true; do
-    read -p "Do you want to reboot now?[y/n]"yn
+    read -p "Do you want to reboot now?[y/n]" yn
     case $yn in
         [Yy]* ) reboot;;
         [Nn]* ) exit;;
