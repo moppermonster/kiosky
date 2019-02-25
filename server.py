@@ -24,7 +24,7 @@ def index():
 def channels(channel):
     '''channels'''
     if not channel in CHANNELS.channels:
-        return f'Unknown channel: {channel}'
+        return 'Unknown channel: '+channel
     CHANNELS.position_update(channel)
     return utils.channel_page(channel, CHANNELS.channels)
 
@@ -33,13 +33,13 @@ def config(channel):
     '''config'''
     if request.method == 'GET':
         if not channel in CHANNELS.channels:
-            return f'Unable to display config: Unknown channel: {channel}'
+            return 'Unable to display config: Unknown channel: '+channel
         return utils.config_page(channel, CHANNELS.channels)
     elif request.method == 'POST':
         name = request.form['channel-name']
         time = request.form['channel-time']
         pages_string = request.form['channel-pages']
-        pages = pages_string.split(',')
+        pages = pages_string.split('|')
         CHANNELS.remove(name)
         CHANNELS.add(name, pages, time)
         return redirect('/')
@@ -50,7 +50,7 @@ def new():
     if request.method == 'POST':
         channel = request.form['channel-name']
         if channel in CHANNELS.channels:
-            return f'Unable to make new channel: name {channel} already exists'
+            return 'Unable to make new channel: name '+channel+' already exists'
         CHANNELS.add(channel, [], 60)
         return redirect('/')
     elif request.method == 'GET':

@@ -41,6 +41,6 @@ while true; do
     case $yn in
         [Yy]* ) reboot;;
         [Nn]* ) exit;;
-        * ) echo "Please anser with y or n.";;
+        * ) echo "Please answer with y or n.";;
     esac
 done

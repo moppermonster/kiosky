@@ -9,16 +9,17 @@ def make_html(url, time):
     """
     Return browser readable html that loads url in an iframe and refreshes after time seconds
     """
-    html = f"""
+    time = str(time)
+    html = """
     <!doctype html>
     <html>
         <head>
             <title>Kiosk</title>
             <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
-            <meta http-equiv="refresh" content={time}>
+            <meta http-equiv="refresh" content="""+time+""">
         </head>
         <body style="margin:0px;padding:0px;overflow:hidden">
-            <iframe src= {url} frameborder="0" style="overflow:hidden;overflow-x:hidden;overflow-y:hidden;height:100%;width:100%;position:absolute;top:0px;left:0px;right:0px;bottom:0px" height="100%" width="100%"></iframe>
+            <iframe src= """+url+""" frameborder="0" style="overflow:hidden;overflow-x:hidden;overflow-y:hidden;height:100%;width:100%;position:absolute;top:0px;left:0px;right:0px;bottom:0px" height="100%" width="100%"></iframe>
         </body>
     </html>
     """
@@ -28,23 +29,25 @@ def make_config(name, time, position, pages):
     """
     Return channel config page as browser readable html
     """
-    html = f"""
+    position = str(position)
+    pages = str(pages)
+    time = str(time)
+    html = """
     <!doctype html>
     <html>
         <head>
-            <title>Kiosk {name} config</title>
+            <title>Kiosk """+name+""" config</title>
             <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
         </head>
         <body>
         Channel name/time/pages<br>
         <form method="POST">
-            <input name="channel-name", value={name}>
-            <input name="channel-time", value={time}>
-            <input name="channel-pages", value={str(pages)}, size=300>
+            <input name="channel-name", value="""+name+""">
+            <input name="channel-time", value="""+time+""">
+            <input name="channel-pages", size=300, value="""+pages+""">
             <input type="submit">
         </form>
-        Channel position<br>
-        {position} <br>
+        Channel position<br> """+position+"""<br>
         </body>
     </html>
     """
@@ -54,7 +57,7 @@ def make_new():
     """
     Return channel config page as browser readable html
     """
-    html = f"""
+    html = """
     <!doctype html>
     <html>
         <head>
@@ -78,7 +81,7 @@ def build_markdown(title, content):
     '''
     content = markdown(content, extensions=['markdown.extensions.extra'])
     fonts = '<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Source+Code+Pro" />'
-    head = f'<html><head><title>{title}</title> {fonts} <link rel="stylesheet" href="/static/css/kiosky.css"></head>'
+    head = '<html><head><title>'+title+'</title> '+fonts+' <link rel="stylesheet" href="/static/css/kiosky.css"></head>'
 
     page = head + '\n\n<body>\n' + content + '\n</body>\n</html>'
     return page
@@ -101,12 +104,12 @@ def home(channels):
         position = channels[entry][1]
         pages = channels[entry][2]
 
-        raw = raw + f'\n### {name}'
-        raw = raw + f'\n[view](/channels/{name}) [edit](/config/{name})'
-        raw = raw + f'\n#### Time: {time} seconds'
-        raw = raw + f'\n#### Position: {position}/{len(pages)-1}'
+        raw = raw + '\n### '+name
+        raw = raw + '\n[view](/channels/'+name+') [edit](/config/'+name+')'
+        raw = raw + '\n#### Time: '+str(time)+'seconds'
+        raw = raw + '\n#### Position: '+str(position)+'/'+str(len(pages)-1)
         for page in pages:
-            raw = raw + f'\n- {page}\n'
+            raw = raw + '\n- '+page+'\n'
 
     raw = raw + '\n[Add channel](/new)'
 
@@ -132,7 +135,7 @@ def config_page(channel, channels):
     time = channel[0]
     position = channel[1]
     pages = channel[2]
-    pages_string = ','.join(pages)
+    pages_string = '|'.join(pages)
 
     return make_config(name, time, position, pages_string)
 

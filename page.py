@@ -11,8 +11,8 @@ class Channels():
     def __init__(self):
         self.channels = {
             '_standby': [10, 0, [
-                'https://www.dutchsec.com',
-                'https://opensource-academy.github.io',
+                'https://dutchsec.com',
+                'https://opensource-academy.github.io'
             ]]
         }
 
